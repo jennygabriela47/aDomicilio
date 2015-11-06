@@ -29,7 +29,7 @@ public class Entrada extends HttpServlet {
 		//3.1 PUBLICAR LOS DATOS		
 		request.setAttribute("entradas", mn);
 		//3.2 INVOCAR A LA VISTA
-		RequestDispatcher rd = getServletContext().getRequestDispatcher("/pageEntrada.jsp");		
+		RequestDispatcher rd = getServletContext().getRequestDispatcher("/html/pageEntrada.jsp");		
 		rd.forward(request, response);
 	}
 

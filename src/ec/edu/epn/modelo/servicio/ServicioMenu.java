@@ -11,10 +11,8 @@ import ec.edu.epn.modelo.vo.EntradaVO;
 public class ServicioMenu {
 
 	public List<EntradaVO> listarEntradas(){
-		ConexionBD con = new ConexionBD();
-		//List<String> entradas = new ArrayList<String>();
-		List<EntradaVO> entradas = new ArrayList<EntradaVO>(); 
-		String entrada = "";
+		ConexionBD con = new ConexionBD();		
+		List<EntradaVO> entradas = new ArrayList<EntradaVO>(); 		
 		
 		ResultSet rs = con.consultar("select NOMBREPLATO,DESCRIPCIONPLATO,PRECIO from PLATO");
 		

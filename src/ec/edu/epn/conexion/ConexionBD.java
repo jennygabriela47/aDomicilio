@@ -2,6 +2,7 @@ package ec.edu.epn.conexion;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -36,29 +37,6 @@ public class ConexionBD {
 		}
 	}
 	
-	/*public ResultSet listar(String sql) 
-	{
-		ResultSet resultado;
-		try 
-		{
-			System.out.println(sql);
-			Statement sentencia = conexion.createStatement();
-			resultado = sentencia.executeQuery("select * from sector");
-			while(resultado.next())
-			{
-				System.out.println(resultado.getInt("CODIGOSECTOR"));
-				System.out.println(resultado.getString("NOMBRESECTOR"));
-			}
-			System.out.println("Conexión exitosa");
-		} 
-		catch (SQLException e) 
-		{
-			e.printStackTrace();
-			return null;
-		}
-		return resultado;
-	}*/
-
 	public ResultSet consultar(String sql) 
 	{
 		ResultSet resultado;
@@ -73,6 +51,22 @@ public class ConexionBD {
 		{
 			e.printStackTrace();
 			return null;
+		}
+		return resultado;
+	}
+	
+	public int insertar(String sql)
+	{
+		int resultado;
+		try
+		{
+			PreparedStatement sentencia = conexion.prepareStatement(sql);
+			resultado = sentencia.executeUpdate();
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+			return 0;
 		}
 		return resultado;
 	}

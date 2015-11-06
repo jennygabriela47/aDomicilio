@@ -6,12 +6,12 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Insert title here</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimun-scale=1.0">
-	<link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
-	<link rel="stylesheet" href="../css/estilos.css" type="text/css">
+	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="css/estilos.css" type="text/css">
 </head>
 <body>
 	<%@include file="header.jsp" %>
-	<form method="get" action="pageSegunda">
+	<form method="get" action="/pageDatos.jsp">
 		<%@ include file="menu.jsp" %>
 		<div class="container">
 			<h3 align="center">3 Sencillos Pasos</h3>
@@ -87,7 +87,7 @@
 	</form>
 	<br>
 	<%@include file="footer.jsp" %>
-	<script language="Javascript" type="text/javascript" src="../js/jQuery.js"></script>
-	<script language="Javascript" type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<script language="Javascript" type="text/javascript" src="js/jQuery.js"></script>
+	<script language="Javascript" type="text/javascript" src="js/bootstrap.min.js"></script>
 </body>
 </html>

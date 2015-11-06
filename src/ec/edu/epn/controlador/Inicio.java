@@ -31,15 +31,11 @@ public class Inicio extends HttpServlet {
 		
 		ServicioSector s = new ServicioSector();
 		List<String> li =	s.listarSectores();
-		//ServicioMenu m = new ServicioMenu();
-		//ArrayList<String> mn = (ArrayList<String>) m.listarEntradas();
 		//3.1 PUBLICAR LOS DATOS
 		request.setAttribute("comboSector", li);
-		//request.setAttribute("entradas", mn);
 		//3.2 INVOCAR A LA VISTA
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/html/pageInicio.jsp");
-		rd.forward(request, response);
-	
+		rd.forward(request, response);		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
