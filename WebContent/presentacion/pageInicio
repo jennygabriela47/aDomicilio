@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Inicio</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimun-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+	<header>
+		<div class="container">
+			<h1>Domicilio.com</h1>
+		</div>		
+	</header>
+	<br>
+	<div class="container">
+		<section class="main">
+		<div class="row">
+			<div class="col-xs-12 col-sm-4 col-md-3 col-lg-6" align="center">
+			<h2>Seleccione el sector</h2>
+				<select>
+					<option value="Seleccione">Seleccione...</option>
+					<option value="Quito">Quito</option>
+					<option value="Guayaquil">Guayaquil</option>
+					<option value="Cuenca">Cuenca</option>
+				</select>
+				<select>
+					<option value="Seleccione">Seleccione...</option>
+					<option value="Calderon">Calderon</option>
+					<option value="Villaflora">Villaflora</option>
+					<option value="Samborondon">Samborondon</option>
+				</select>
+			</div>
+			<div class="col-xs-12 col-sm-8 col-md-9 col-lg-6" align="center">
+				<h2>Logo de la empresa</h2>
+				<h4>Tiempo de entrega: 30 minutos</h4>
+				<h4>Monto mínimo: $10.00</h4>
+				<h4>Modo de pago: Efectivo</h4>
+				<button type="submit" class="btn btn-primary">Ingresar</button>
+			</div>
+		</div>		
+		</section>
+	</div>
+	<br>
+	<footer>
+		<div class="container">
+			<h5>Derechos reservados</h5>
+		</div>
+	</footer>
+	<script src="js/jQuery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
