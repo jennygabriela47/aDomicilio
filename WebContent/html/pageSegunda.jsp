@@ -11,7 +11,7 @@
 </head>
 <body>
 	<%@include file="header.jsp" %>
-	<form method="get" action="../html/pageDatos.jsp">
+	<form method="get" action="Segunda">
 		<%@ include file="menu.jsp" %>
 		<div class="container">
 			<h3 align="center">3 Sencillos Pasos</h3>

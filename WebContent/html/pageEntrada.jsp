@@ -1,5 +1,8 @@
+<%@page import="ec.edu.epn.modelo.vo.Entrada"%>
+<%@page import="ec.edu.epn.modelo.servicio.ServicioMenu"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page import = "java.util.*,ec.edu.epn.modelo.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,26 +14,28 @@
 </head>
 <body>
 	<%@include file="header.jsp" %>
-	<form method="get" action="../html/pageSegunda.jsp">
+	<form method="get" action="html/pageSegunda.jsp">
 		<%@include file="menu.jsp" %>
 		<div align="center">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-8 col-md-9 col-lg-6">
 					<table class="table" >
+						<%
+						List<Entrada> li=( List<Entrada>)request.getAttribute("entradas");
+						for(Entrada entra:li){
+						%>
 						<tr>
 							<td>
-							<h3>Pimientos rellenos</h3>
+								<%= entra.getNombrePlato()%>
 							</td>
 							<td>
-							<h4><small>$0,75 c/u </small></h4>
+								<%= entra.getPrecio()%>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<h4>
-									<small>Pimientos rellenos con atún y arroz</small>
-								</h4>
+								<%= entra.getDescripcionPlato() %>
 							</td>
 							<td>
 								<table>
@@ -45,47 +50,10 @@
 											<button type="submit" class="btn btn-primary btn-xs">Agregar</button>
 										</td>
 									</tr>
-								</table>							
+								</table>
 							</td>
-						</tr>
-					</table>	
-				</div>
-			</div>			
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12 col-sm-8 col-md-9 col-lg-6">
-					<table class="table">
-						<tr>
-							<td>
-							<h3>Tortilla esponjosa</h3>
-							</td>
-							<td>
-							<h4><small>$1,00 c/u </small></h4>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<h4>
-									<small>Huevo, tomates cherry, champiñones</small>
-								</h4>
-							</td>
-							<td>
-								<table>
-									<tr>
-										<td>
-											<input type="text" />
-										</td>
-									</tr>
-									<br>
-									<tr>
-										<td align="right">
-											<button type="submit" class="btn btn-primary btn-xs" >Agregar</button>
-										</td>
-									</tr>
-								</table>							
-							</td>
-						</tr>
+						</tr>						
+						<%} %>
 					</table>	
 				</div>
 			</div>			

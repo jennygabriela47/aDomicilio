@@ -11,7 +11,8 @@ public class ServicioMenu {
 
 	public List<String> listarEntradas(){
 		ConexionBD con = new ConexionBD();
-		List<String> entradas = new ArrayList<String>();
+		//List<String> entradas = new ArrayList<String>();
+		ArrayList<String> entradas = new ArrayList<String>(); 
 		String entrada = "";
 		
 		ResultSet rs = con.consultar("select NOMBREPLATO,DESCRIPCIONPLATO,PRECIO from PLATO");

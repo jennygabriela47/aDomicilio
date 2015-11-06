@@ -13,7 +13,7 @@ public class ServicioSector {
 		List<String> sectores = new ArrayList<String>();
 		String sector = "";
 		
-		ResultSet rs = con.consultar("select * from sector");
+		ResultSet rs = con.consultar("select * from SECTOR");
 		
 		try {
 			while(rs.next()){
