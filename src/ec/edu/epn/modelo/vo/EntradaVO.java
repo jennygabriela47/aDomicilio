@@ -1,6 +1,6 @@
 package ec.edu.epn.modelo.vo;
 
-public class Entrada {
+public class EntradaVO {
 
 	private int codigoPlato;
 	private int codigoCategoria;
@@ -8,7 +8,7 @@ public class Entrada {
 	private String descripcionPlato;
 	private double precio;
 
-	public Entrada()
+	public EntradaVO()
 	{
 		codigoPlato = 0;
 		codigoCategoria = 0;

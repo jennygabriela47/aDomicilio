@@ -28,8 +28,8 @@
 						<option value="Seleccione">Seleccione...</option>
 						<%
 							ServicioSector cs = new ServicioSector();
-														List<String> listaSectores = (List<String>)request.getAttribute("comboSector");
-														for(String ls:listaSectores){
+							List<String> listaSectores = (List<String>)request.getAttribute("comboSector");
+							for(String ls:listaSectores){
 						%>
 						<option value="<%=ls%>"><%=ls%></option>
 						<%}%>
@@ -41,7 +41,7 @@
 					<h4>Tiempo de entrega: 30 minutos</h4>
 					<h4>Monto mínimo: $5.00</h4>
 					<h4>Modo de pago: Efectivo</h4>
-					<button type="submit" class="btn btn-primary">Ingresar</button>
+					<button type="submit" class="btn btn-primary" >Ingresar</button>
 				</div>
 			</div>		
 			</section>

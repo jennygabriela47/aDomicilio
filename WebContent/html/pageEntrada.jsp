@@ -1,4 +1,4 @@
-<%@page import="ec.edu.epn.modelo.vo.Entrada"%>
+<%@page import="ec.edu.epn.modelo.vo.EntradaVO"%>
 <%@page import="ec.edu.epn.modelo.servicio.ServicioMenu"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -22,8 +22,8 @@
 				<div class="col-xs-12 col-sm-8 col-md-9 col-lg-6">
 					<table class="table" >
 						<%
-						List<Entrada> li=( List<Entrada>)request.getAttribute("entradas");
-						for(Entrada entra:li){
+						List<EntradaVO> li = (List<EntradaVO>)request.getAttribute("entradas");
+						for(EntradaVO entra:li){												
 						%>
 						<tr>
 							<td>

@@ -28,6 +28,7 @@ public class ConexionBD {
 			{
 				System.out.println("Conexion FALLIDA " + url);
 			}
+			
 		}
 		catch(Exception e)
 		{
@@ -67,6 +68,7 @@ public class ConexionBD {
 			Statement sentencia = conexion.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
 			resultado = sentencia.executeQuery(sql);
 		} 
+		
 		catch (SQLException e) 
 		{
 			e.printStackTrace();

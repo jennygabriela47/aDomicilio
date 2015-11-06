@@ -6,14 +6,14 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="html/pageInicio.jsp" class="navbar-brand">Menú</a>
+				<a href="Inicio" class="navbar-brand">Menú</a>
 		</div>
 		<div class="collapse navbar-collapse" id="colapsar">
 			<ul class="nav navbar-nav">
-				<li><a href="pageEntrada.jsp">Entradas</a></li>
+				<li><a href="Segunda">Entradas</a></li>
 				<li><a href="../html/pagePlatoFuerte.jsp">Platos fuertes</a></li>
 				<li><a href="../html/pagePostre.jsp">Postres</a></li>
 				<li><a href="../html/pageBebidas.jsp">Bebidas</a></li>
 			</ul>
 		</div>
-	</nav>
+</nav>
