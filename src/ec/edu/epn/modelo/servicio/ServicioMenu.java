@@ -14,7 +14,7 @@ public class ServicioMenu {
 		ConexionBD con = new ConexionBD();		
 		List<EntradaVO> entradas = new ArrayList<EntradaVO>(); 		
 		
-		ResultSet rs = con.consultar("select NOMBREPLATO,DESCRIPCIONPLATO,PRECIO from PLATO");
+		ResultSet rs = con.consultar("select p.NOMBREPLATO,p.DESCRIPCIONPLATO,p.PRECIO from PLATO p join CATEGORIA c on p.CODIGOCATEGORIA = c.CODIGOCATEGORIA where c.CODIGOCATEGORIA='1'");
 		
 		try {
 			while(rs.next()){

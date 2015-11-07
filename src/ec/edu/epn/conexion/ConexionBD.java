@@ -55,20 +55,12 @@ public class ConexionBD {
 		return resultado;
 	}
 	
-	public int insertar(String sql)
-	{
-		int resultado;
-		try
-		{
-			PreparedStatement sentencia = conexion.prepareStatement(sql);
-			resultado = sentencia.executeUpdate();
-		}
-		catch(SQLException e)
-		{
-			e.printStackTrace();
-			return 0;
-		}
-		return resultado;
+	public Connection getConexion() {
+		return conexion;
+	}
+
+	public void setConexion(Connection conexion) {
+		this.conexion = conexion;
 	}
 	
 }
