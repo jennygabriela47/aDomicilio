@@ -10,8 +10,8 @@
 		</div>
 		<div class="collapse navbar-collapse" id="colapsar">
 			<ul class="nav navbar-nav">
-				<li><a href="Segunda">Entradas</a></li>
-				<li><a href="../html/pagePlatoFuerte.jsp">Platos fuertes</a></li>
+				<li><a href="Entrada">Entradas</a></li>
+				<li><a href="PlatoFuerte">Platos fuertes</a></li>
 				<li><a href="../html/pagePostre.jsp">Postres</a></li>
 				<li><a href="../html/pageBebidas.jsp">Bebidas</a></li>
 			</ul>

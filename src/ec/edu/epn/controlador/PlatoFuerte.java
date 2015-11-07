@@ -13,22 +13,25 @@ import javax.servlet.http.HttpServletResponse;
 import ec.edu.epn.modelo.servicio.ServicioMenu;
 import ec.edu.epn.modelo.vo.MenuVO;
 
-@WebServlet("/Entrada")
-public class Entrada extends HttpServlet {
+/**
+ * Servlet implementation class PlatoFuerte
+ */
+@WebServlet("/PlatoFuerte")
+public class PlatoFuerte extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public Entrada() {
+    public PlatoFuerte() {
         super();
     }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ServicioMenu m = new ServicioMenu();
-		List<MenuVO> mn=m.listarEntradas();
+		List<MenuVO> mn=m.listarPlatosFuertes();
 		
 		//3.1 PUBLICAR LOS DATOS		
-		request.setAttribute("entradas", mn);
+		request.setAttribute("platosFuertes", mn);
 		//3.2 INVOCAR A LA VISTA
-		RequestDispatcher rd = getServletContext().getRequestDispatcher("/html/pageEntrada.jsp");		
+		RequestDispatcher rd = getServletContext().getRequestDispatcher("/html/pagePlatoFuerte.jsp");		
 		rd.forward(request, response);
 	}
 
