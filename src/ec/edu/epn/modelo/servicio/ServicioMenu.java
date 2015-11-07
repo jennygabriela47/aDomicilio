@@ -26,8 +26,7 @@ public class ServicioMenu {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}		
-		
+		}				
 		return entradas; 
 	}
 	
@@ -92,11 +91,14 @@ public class ServicioMenu {
 		
 		try 
 		{
-			MenuVO be = new MenuVO();
-			be.setNombrePlato(rs.getString(1));
-			be.setDescripcionPlato(rs.getString(2));
-			be.setPrecio(rs.getDouble(3));
-			bebidas.add(be);
+			while(rs.next())
+			{
+				MenuVO be = new MenuVO();
+				be.setNombrePlato(rs.getString(1));
+				be.setDescripcionPlato(rs.getString(2));
+				be.setPrecio(rs.getDouble(3));
+				bebidas.add(be);
+			}			
 		} 
 		catch (SQLException e) 
 		{

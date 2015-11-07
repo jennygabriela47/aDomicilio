@@ -12,8 +12,8 @@
 			<ul class="nav navbar-nav">
 				<li><a href="Entrada">Entradas</a></li>
 				<li><a href="PlatoFuerte">Platos fuertes</a></li>
-				<li><a href="../html/pagePostre.jsp">Postres</a></li>
-				<li><a href="../html/pageBebidas.jsp">Bebidas</a></li>
+				<li><a href="Postre">Postres</a></li>
+				<li><a href="Bebida">Bebidas</a></li>
 			</ul>
 		</div>
 </nav>

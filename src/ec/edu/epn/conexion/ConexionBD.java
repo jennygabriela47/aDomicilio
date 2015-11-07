@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class ConexionBD {
+public class ConexionBD  {
 
 	private Connection conexion = null;
 	private String servidor = "localhost";
@@ -14,7 +14,7 @@ public class ConexionBD {
 	private String password = "moviles";
 	private String url = "jdbc:sqlserver://" + servidor + ":1433";
 	
-	public ConexionBD()
+	public ConexionBD() 
 	{
 		try
 		{
