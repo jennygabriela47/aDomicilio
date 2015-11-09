@@ -54,6 +54,21 @@ public class ConexionBD  {
 		return resultado;
 	}
 	
+	public void insertar(String sql) 
+	{
+		try 
+		{
+			System.out.println(sql);
+			Statement sentencia = conexion.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+			sentencia.executeUpdate(sql);
+		} 
+		
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+	}
+	
 	public Connection getConexion() {
 		return conexion;
 	}

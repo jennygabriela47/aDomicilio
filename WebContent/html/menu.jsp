@@ -8,12 +8,14 @@
 				</button>
 				<a href="Inicio" class="navbar-brand">Menú</a>
 		</div>
+		<% HttpSession hsm = request.getSession();
+		String codPedido = (String) hsm.getAttribute("codPedido");%>
 		<div class="collapse navbar-collapse" id="colapsar">
 			<ul class="nav navbar-nav">
-				<li><a href="Entrada">Entradas</a></li>
-				<li><a href="PlatoFuerte">Platos fuertes</a></li>
-				<li><a href="Postre">Postres</a></li>
-				<li><a href="Bebida">Bebidas</a></li>
+				<li><a href="Entrada?codPedido=<%=codPedido%>">Entradas</a></li>
+				<li><a href="PlatoFuerte?codPedido=<%=codPedido%>">Platos fuertes</a></li>
+				<li><a href="Postre?codPedido=<%=codPedido%>">Postres</a></li>
+				<li><a href="Bebida?codPedido=<%=codPedido%>">Bebidas</a></li>
 			</ul>
 		</div>
 </nav>

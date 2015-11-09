@@ -34,6 +34,9 @@ public class Inicio extends HttpServlet {
 		//3.1 PUBLICAR LOS DATOS
 		request.setAttribute("comboSector", li);
 		//3.2 INVOCAR A LA VISTA
+		
+		
+		
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/html/pageInicio.jsp");
 		rd.forward(request, response);		
 	}

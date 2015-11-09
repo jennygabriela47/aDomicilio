@@ -7,6 +7,7 @@ import java.util.List;
 
 import ec.edu.epn.conexion.ConexionBD;
 import ec.edu.epn.modelo.vo.MenuVO;
+import ec.edu.epn.modelo.vo.PedidoVO;
 
 public class ServicioMenu {
 
@@ -14,7 +15,7 @@ public class ServicioMenu {
 		ConexionBD con = new ConexionBD();		
 		List<MenuVO> entradas = new ArrayList<MenuVO>(); 		
 		
-		ResultSet rs = con.consultar("select p.NOMBREPLATO,p.DESCRIPCIONPLATO,p.PRECIO from PLATO p join CATEGORIA c on p.CODIGOCATEGORIA = c.CODIGOCATEGORIA where c.CODIGOCATEGORIA='1'");
+		ResultSet rs = con.consultar("select p.NOMBREPLATO,p.DESCRIPCIONPLATO,p.PRECIO,p.CODIGOPLATO from PLATO p join CATEGORIA c on p.CODIGOCATEGORIA = c.CODIGOCATEGORIA where c.CODIGOCATEGORIA='1'");
 		
 		try {
 			while(rs.next()){
@@ -22,6 +23,7 @@ public class ServicioMenu {
 				i.setNombrePlato(rs.getString(1));
 				i.setDescripcionPlato(rs.getString(2));
 				i.setPrecio(rs.getDouble(3));
+				i.setCodigoPlato(Integer.parseInt(rs.getString(4)));
 				entradas.add(i);
 			}
 		} catch (SQLException e) {
@@ -35,7 +37,7 @@ public class ServicioMenu {
 		ConexionBD con = new ConexionBD();
 		List<MenuVO> platosFuertes = new ArrayList<MenuVO>();
 		
-		ResultSet rs = con.consultar("select p.NOMBREPLATO,p.DESCRIPCIONPLATO,p.PRECIO from PLATO p join CATEGORIA c on p.CODIGOCATEGORIA = c.CODIGOCATEGORIA where c.CODIGOCATEGORIA='2'");
+		ResultSet rs = con.consultar("select p.NOMBREPLATO,p.DESCRIPCIONPLATO,p.PRECIO,p.CODIGOPLATO from PLATO p join CATEGORIA c on p.CODIGOCATEGORIA = c.CODIGOCATEGORIA where c.CODIGOCATEGORIA='2'");
 		
 		try 
 		{
@@ -45,6 +47,7 @@ public class ServicioMenu {
 				pf.setNombrePlato(rs.getString(1));
 				pf.setDescripcionPlato(rs.getString(2));
 				pf.setPrecio(rs.getDouble(3));
+				pf.setCodigoPlato(Integer.parseInt(rs.getString(4)));
 				platosFuertes.add(pf);
 			}
 		} 
@@ -61,7 +64,7 @@ public class ServicioMenu {
 		ConexionBD con = new ConexionBD();
 		List<MenuVO> postres = new ArrayList<MenuVO>();
 		
-		ResultSet rs = con.consultar("select p.NOMBREPLATO,p.DESCRIPCIONPLATO,p.PRECIO from PLATO p join CATEGORIA c on p.CODIGOCATEGORIA = c.CODIGOCATEGORIA where c.CODIGOCATEGORIA='3'");
+		ResultSet rs = con.consultar("select p.NOMBREPLATO,p.DESCRIPCIONPLATO,p.PRECIO,p.CODIGOPLATO from PLATO p join CATEGORIA c on p.CODIGOCATEGORIA = c.CODIGOCATEGORIA where c.CODIGOCATEGORIA='3'");
 		
 		try 
 		{
@@ -71,6 +74,7 @@ public class ServicioMenu {
 				po.setNombrePlato(rs.getString(1));
 				po.setDescripcionPlato(rs.getString(2));
 				po.setPrecio(rs.getDouble(3));
+				po.setCodigoPlato(Integer.parseInt(rs.getString(4)));
 				postres.add(po);
 			}
 		} 
@@ -87,7 +91,7 @@ public class ServicioMenu {
 		ConexionBD con = new ConexionBD();
 		List<MenuVO> bebidas = new ArrayList<MenuVO>();
 		
-		ResultSet rs = con.consultar("select p.NOMBREPLATO,p.DESCRIPCIONPLATO,p.PRECIO from PLATO p join CATEGORIA c on p.CODIGOCATEGORIA = c.CODIGOCATEGORIA where c.CODIGOCATEGORIA='4'");
+		ResultSet rs = con.consultar("select p.NOMBREPLATO,p.DESCRIPCIONPLATO,p.PRECIO,p.CODIGOPLATO from PLATO p join CATEGORIA c on p.CODIGOCATEGORIA = c.CODIGOCATEGORIA where c.CODIGOCATEGORIA='4'");
 		
 		try 
 		{
@@ -97,6 +101,7 @@ public class ServicioMenu {
 				be.setNombrePlato(rs.getString(1));
 				be.setDescripcionPlato(rs.getString(2));
 				be.setPrecio(rs.getDouble(3));
+				be.setCodigoPlato(Integer.parseInt(rs.getString(4)));
 				bebidas.add(be);
 			}			
 		} 
@@ -108,4 +113,72 @@ public class ServicioMenu {
 		return bebidas;
 	}
 	
+	public List<PedidoVO> listarPedido(int codPedido)
+	{
+		ConexionBD con = new ConexionBD();
+		List<PedidoVO> pedido = new ArrayList<PedidoVO>();
+		
+		ResultSet rs = con.consultar("select d.*,p.* from DETALLE d join PLATO p on d.CODIGOPLATO = p.CODIGOPLATO where d.CODIGOORDEN ='"+codPedido+"'");
+		
+		try 
+		{
+			while(rs.next())
+			{
+				PedidoVO ped = new PedidoVO();
+				ped.setCodigoPlato(Integer.parseInt(rs.getString(2)));
+				ped.setNombrePlato(rs.getString(6));
+				ped.setPrecio(rs.getDouble(8));
+				ped.setCantidad(Integer.parseInt(rs.getString(3)));
+				pedido.add(ped);
+			}			
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		
+		return pedido;
+	}
+	
+	public void setPlatoPedido (int codOrden,int codPlato,int cantidad){
+		ConexionBD con = new ConexionBD();		
+		con.insertar("INSERT INTO DETALLE (CODIGOORDEN,CODIGOPLATO,CANTIDAD) VALUES ("+codOrden+","+codPlato+","+cantidad+")");		
+	}
+	
+	public void delPlatoPedido (int codOrden,int codPlato){
+		ConexionBD con = new ConexionBD();		
+		con.insertar("DELETE FROM DETALLE WHERE CODIGOORDEN = '"+codOrden+"' AND CODIGOPLATO = '"+codPlato+"'");		
+	}
+	
+	public void setOrden (int codOrden){
+		ConexionBD con = new ConexionBD();		
+		con.insertar("INSERT INTO ORDEN (CODIGOORDEN) VALUES ("+codOrden+")");		
+	}
+	
+	public void updateOrden (int codOrden,double subtotal,double total){
+		ConexionBD con = new ConexionBD();		
+		con.insertar("UPDATE ORDEN SET SUBTOTAL='"+subtotal+"', TOTAL='"+total+"' WHERE CODIGOORDEN='"+codOrden+"'");		
+	}
+	
+	public int numPlatos(){
+		ConexionBD con = new ConexionBD();
+		
+		ResultSet rs = con.consultar("select COUNT(*) AS 'NUMERO' FROM PLATO");
+		
+		int numero=0;
+		
+		try 
+		{
+			while(rs.next())
+			{
+				numero = rs.getInt("NUMERO");
+			}			
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		
+		return numero;
+	}
 }

@@ -6,8 +6,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Insert title here</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimun-scale=1.0">
-	<link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
-	<link rel="stylesheet" href="../css/estilos.css" type="text/css">
+	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="css/estilos.css" type="text/css">
 </head>
 <script type="text/javascript">
 	function mensajeFinalizado(){
@@ -16,12 +16,11 @@
 </script>
 <body>
 	<%@include file="header.jsp" %>
-	<form method="get" action="../html/pageDetalle.jsp">
+	<form method="get" action="DatoCliente">
 		<div class="container">
 			<h1>Información de envío</h1>
-	</div>
-	<div class="container">
-		<form>
+		</div>
+		<div class="container">
 			<table class="table">
 				<tr>
 					<td>Nombres: </td>
@@ -38,7 +37,7 @@
 				<tr>
 					<td>Lugar de referencia: </td>
 					<td>
-						<input type="text" name="direccion">
+						<input type="text" name="lugarReferencia">
 					</td>
 				</tr>
 				<tr>
@@ -55,11 +54,10 @@
 				</tr>
 				<tr>
 					<td align="center" colspan="2">
-						<button class="btn btn-primary" type="button" onclick="mensajeFinalizado()">Hacer pedido</button>
+						<button class="btn btn-primary" type="submit" onclick="mensajeFinalizado()">Hacer pedido</button>
 					</td>
 				</tr>
 			</table>
-		</form>
 	</div>
 	</form>
 	<%@include file="footer.jsp" %>

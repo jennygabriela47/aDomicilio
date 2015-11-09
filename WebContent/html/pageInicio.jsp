@@ -14,7 +14,7 @@
 <body>
 	<%@include file="header.jsp" %>
 	<br>
-	<form method="get" action="html/pageSegunda.jsp">
+	<form method="get" action="Pedido">
 		<div class="container">
 			<section class="main">
 			<div class="row">
@@ -41,6 +41,7 @@
 					<h4>Tiempo de entrega: 30 minutos</h4>
 					<h4>Monto mínimo: $5.00</h4>
 					<h4>Modo de pago: Efectivo</h4>
+					<input type="hidden"/ name="codPedido" value="1">
 					<button type="submit" class="btn btn-primary" >Ingresar</button>
 				</div>
 			</div>		

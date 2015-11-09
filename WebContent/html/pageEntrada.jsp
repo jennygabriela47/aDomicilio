@@ -14,8 +14,9 @@
 </head>
 <body>
 	<%@include file="header.jsp" %>
-	<form method="get" action="html/pageSegunda.jsp">
+	<form method="get" action="Pedido">
 		<%@include file="menu.jsp" %>
+		
 		<div align="center">
 		<div class="container">
 			<div class="row">
@@ -41,7 +42,7 @@
 								<table>
 									<tr>
 										<td>
-											<input type="text" />
+											<input type="number" name="cantidad<%= entra.getCodigoPlato()%>"/>
 										</td>
 									</tr>
 									
@@ -59,6 +60,7 @@
 			</div>			
 		</div>
 	</div>
+	<input type="hidden" name="codPedido" value="<%=codPedido%>"/>
 	</form>
 	<%@include file="footer.jsp" %>
 	<script language="Javascript" type="text/javascript" src="js/jQuery.js"></script>

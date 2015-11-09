@@ -13,7 +13,7 @@
 </head>
 <body>
 	<%@include file="header.jsp" %>
-	<form method="get" action="../html/pageSegunda.jsp">
+	<form method="get" action="Pedido">
 		<%@include file="menu.jsp" %>
 		<div align="center">
 		<div class="container">
@@ -40,7 +40,7 @@
 								<table>
 									<tr>
 										<td>
-											<input type="text" />
+											<input type="number" name="cantidad<%= entra.getCodigoPlato()%>"/>
 										</td>
 									</tr>
 									
@@ -57,45 +57,8 @@
 				</div>
 			</div>			
 		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12 col-sm-8 col-md-9 col-lg-6">
-					<table class="table">
-						<tr>
-							<td>
-							<h3>Waffles con fresas</h3>
-							</td>
-							<td>
-							<h4><small>$1,50 c/u </small></h4>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<h4>
-									<small></small>
-								</h4>
-							</td>
-							<td>
-								<table>
-									<tr>
-										<td>
-											<input type="text" />
-										</td>
-									</tr>
-									<br>
-									<tr>
-										<td align="right">
-											<button type="submit" class="btn btn-primary btn-xs">Agregar</button>
-										</td>
-									</tr>
-								</table>							
-							</td>
-						</tr>
-					</table>	
-				</div>
-			</div>			
-		</div>
 	</div>
+	<input type="hidden" name="codPedido" value="<%=codPedido%>"/>
 	</form>
 	<%@include file="footer.jsp" %>
 	<script language="Javascript" type="text/javascript" src="js/jQuery.js"></script>
