@@ -1,7 +1,6 @@
 package ec.edu.epn.controlador;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -11,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ec.edu.epn.modelo.servicio.ServicioMenu;
 import ec.edu.epn.modelo.servicio.ServicioSector;
 
 

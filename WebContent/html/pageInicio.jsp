@@ -39,7 +39,6 @@
 				<div class="col-xs-12 col-sm-8 col-md-9 col-lg-6" align="center">
 					<img src="imagenes/foodNow.png" class="img-responsive"/>
 					<h4>Tiempo de entrega: 30 minutos</h4>
-					<h4>Monto mínimo: $5.00</h4>
 					<h4>Modo de pago: Efectivo</h4>
 					<input type="hidden"/ name="codPedido" value="1">
 					<button type="submit" class="btn btn-primary" >Ingresar</button>

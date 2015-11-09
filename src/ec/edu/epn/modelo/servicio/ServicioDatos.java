@@ -1,6 +1,5 @@
 package ec.edu.epn.modelo.servicio;
 
-import java.sql.*;
 import ec.edu.epn.conexion.ConexionBD;
 
 public class ServicioDatos {
