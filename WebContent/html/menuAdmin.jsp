@@ -6,17 +6,16 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="Inicio" class="navbar-brand">Inicio</a>
 		</div>
 		<% HttpSession hsm = request.getSession();
 		String codPedido = (String) hsm.getAttribute("codPedido");%>
 		<div class="collapse navbar-collapse" id="colapsar">
 			<ul class="nav navbar-nav">
-				<li><a href="Entrada?codPedido=<%=codPedido%>">Entradas</a></li>
-				<li><a href="PlatoFuerte?codPedido=<%=codPedido%>">Platos fuertes</a></li>
-				<li><a href="Postre?codPedido=<%=codPedido%>">Postres</a></li>
-				<li><a href="Bebida?codPedido=<%=codPedido%>">Bebidas</a></li>
-				<li><a href="ActualizacionUsuario"><i><b>Actualiza tus Datos</b></i></a></li>
+				<li><a href="Usuarios">Usuarios</a></li>
+				<li><a href="Menus">Menus</a></li>
+				<li><a href="Pedidos">Pedidos</a></li>
+				<li><a href="Sucursales">Sucursales</a></li>
+				
 			</ul>
 		</div>
 </nav>
