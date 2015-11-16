@@ -1,4 +1,4 @@
-<%@page import="ec.edu.epn.modelo.vo.RegistroVO"%>
+<%@page import="ec.edu.epn.modelo.vo.PedidosVO"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ page import = "java.util.*,ec.edu.epn.modelo.*" %>
@@ -6,47 +6,52 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>USUARIOS REGISTRADOS</title>
+	<title>PEDIDOS</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimun-scale=1.0">
 	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 	<link rel="stylesheet" href="css/estilos.css" type="text/css">
 </head>
 <body>
 	<%@include file="header.jsp" %>
-	<form method="get" action="Usuarios">
+	<form method="get" action="ListaPedidos">
 		<%@include file="menuAdmin.jsp" %>
 		<div align="center">
-		<h2>USUARIOS REGISTRADOS</h2>
+		
 		<div class="container">
+		Sucursal:
+		<input type="text" name="sucursal"/>
+		<button type="submit" class="btn btn-primary btn-xs" >Buscar</button>
+		<br>
+		<br>
 			<div class="row">
 				<div class="col-xs-12 col-sm-8 col-md-9 col-lg-6">
 					<table class="table" >
 						
 							
 						<tr>
-						<th>NOMBRES</th><th>APELLIDOS</th><th>E-MAIL</th><th>TELEFONO</th><th>CLAVE</th>
+						<th>NOMBRES</th><th>DIRECCION</th><th>LUGAR DE REFERECIA</th><th>TELEFONO</th><th>SUCURSAL</th>
 						</tr>
 						<%
 						
-						List<RegistroVO> li = (List<RegistroVO>)request.getAttribute("usuario");
-						for(RegistroVO usuario:li){												
+						List<PedidosVO> li = (List<PedidosVO>)request.getAttribute("pedidos");
+						for(PedidosVO pedido:li){												
 						%>
 						<tr>
 							<td>
-								<%= usuario.getNombreU()%>
+								<%= pedido.getNombreP()%>
 							</td>
 							<td>
-								<%= usuario.getApellidoU()%>
+								<%= pedido.getDireccionP()%>
 							</td>
 						
 							<td>
-								<%= usuario.getEmailU() %>
+								<%= pedido.getLugarP() %>
 							</td>	
 							<td>
-								<%= usuario.getTelefonoU() %>
+								<%= pedido.getTelefonoP() %>
 							</td>	
 							<td>
-								<%= usuario.getClaveU() %>
+								<%= pedido.getSucursalP() %>
 							</td>	
 						</tr>
 						<%} %>

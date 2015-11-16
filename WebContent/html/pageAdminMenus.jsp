@@ -14,10 +14,19 @@
 </head>
 <body>
 	<%@include file="header.jsp" %>
+	
+	<center>
+	
+		
+		
+		
 	<form method="get" action="Menus">
 		<%@include file="menuAdmin.jsp" %>
 		
 		<div align="center">
+		<div method="get" action="NuevoPlato">
+		<button type="submit" class="btn btn-primary ">NUEVO PLATO</button>
+		</div>
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-8 col-md-9 col-lg-6">

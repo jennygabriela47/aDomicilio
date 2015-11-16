@@ -1,4 +1,4 @@
-<%@page import="ec.edu.epn.modelo.vo.RegistroVO"%>
+<%@page import="ec.edu.epn.modelo.vo.SucursalVO"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ page import = "java.util.*,ec.edu.epn.modelo.*" %>
@@ -6,17 +6,17 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>USUARIOS REGISTRADOS</title>
+	<title>SUCURSALES</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimun-scale=1.0">
 	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 	<link rel="stylesheet" href="css/estilos.css" type="text/css">
 </head>
 <body>
 	<%@include file="header.jsp" %>
-	<form method="get" action="Usuarios">
+	<form method="get" action="Sucursales">
 		<%@include file="menuAdmin.jsp" %>
 		<div align="center">
-		<h2>USUARIOS REGISTRADOS</h2>
+		
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-8 col-md-9 col-lg-6">
@@ -24,30 +24,23 @@
 						
 							
 						<tr>
-						<th>NOMBRES</th><th>APELLIDOS</th><th>E-MAIL</th><th>TELEFONO</th><th>CLAVE</th>
+						<th>NOMBRE</th><th>DIRECCION</th>
 						</tr>
 						<%
 						
-						List<RegistroVO> li = (List<RegistroVO>)request.getAttribute("usuario");
-						for(RegistroVO usuario:li){												
+						List<SucursalVO> li = (List<SucursalVO>)request.getAttribute("sucursal");
+						for(SucursalVO sucursal:li){												
 						%>
 						<tr>
 							<td>
-								<%= usuario.getNombreU()%>
+								<%= sucursal.getNombreS()%>
 							</td>
 							<td>
-								<%= usuario.getApellidoU()%>
+								<%= sucursal.getDireccionS()%>
 							</td>
-						
 							<td>
-								<%= usuario.getEmailU() %>
-							</td>	
-							<td>
-								<%= usuario.getTelefonoU() %>
-							</td>	
-							<td>
-								<%= usuario.getClaveU() %>
-							</td>	
+							<button type="submit" class="btn btn-primary btn-xs" align="right">Eliminar</button>
+						</td>
 						</tr>
 						<%} %>
 							</table>

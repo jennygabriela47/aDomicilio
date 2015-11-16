@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Registro</title>
+	<title>Inicio Sesion</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimun-scale=1.0">
 	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 	<link rel="stylesheet" href="css/estilos.css" type="text/css">
@@ -22,13 +22,13 @@
 				<tr>
 					<td>Usuario: </td>
 					<td>
-						<input type="text" name="nombre">
+						<input type="text" name="usuario">
 					</td>
 				</tr>
 				<tr>
 					<td>Clave: </td>
 					<td>
-						<input type="text" name="direccion">
+						<input type="text" name="clave">
 					</td>
 				</tr>
 				

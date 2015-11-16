@@ -159,6 +159,11 @@ public class ServicioMenu {
 		ConexionBD con = new ConexionBD();		
 		con.insertar("UPDATE ORDEN SET SUBTOTAL='"+subtotal+"', TOTAL='"+total+"' WHERE CODIGOORDEN='"+codOrden+"'");		
 	}
+	public void setPlato (String nombrePlato, String descripcionPlato, double precioPlato){
+		ConexionBD con = new ConexionBD();		
+		con.insertar("INSERT INTO PLATO (NOMBREPLATO, DESCRIPCIONPLATO, PRECIO) VALUES ('"+nombrePlato+"','"+descripcionPlato+"','"+precioPlato+"')");		
+	
+	}
 	
 	public int numPlatos(){
 		ConexionBD con = new ConexionBD();

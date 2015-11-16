@@ -13,7 +13,7 @@
 			<ul class="nav navbar-nav">
 				<li><a href="Usuarios">Usuarios</a></li>
 				<li><a href="Menus">Menus</a></li>
-				<li><a href="Pedidos">Pedidos</a></li>
+				<li><a href="ListaPedidos">Pedidos</a></li>
 				<li><a href="Sucursales">Sucursales</a></li>
 				
 			</ul>

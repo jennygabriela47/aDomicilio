@@ -30,13 +30,13 @@
 				<tr>
 					<td>Apellidos: </td>
 					<td>
-						<input type="text" name="direccion">
+						<input type="text" name="apellido">
 					</td>
 				</tr>
 				<tr>
 					<td>E-mail: </td>
 					<td>
-						<input type="text" name="lugarReferencia">
+						<input type="text" name="email">
 					</td>
 				</tr>
 				<tr>
@@ -48,7 +48,7 @@
 				<tr>
 					<td>Clave: </td>
 					<td>
-						<input type="text" name="celular">
+						<input type="text" name="clave">
 					</td>
 				</tr>
 				<tr>

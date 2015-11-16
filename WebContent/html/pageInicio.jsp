@@ -1,4 +1,4 @@
-<%@page import="ec.edu.epn.modelo.servicio.ServicioSector"%>
+<%@page import="ec.edu.epn.modelo.servicio.ServicioSucursal"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ page import = "java.util.*,ec.edu.epn.modelo.*" %>    
@@ -46,7 +46,7 @@
 					<select style="width:180px; height:40px;">
 						<option value="Seleccione">Seleccione...</option>
 						<%
-							ServicioSector cs = new ServicioSector();
+							ServicioSucursal cs = new ServicioSucursal();
 							List<String> listaSectores = (List<String>)request.getAttribute("comboSector");
 							for(String ls:listaSectores){
 						%>
