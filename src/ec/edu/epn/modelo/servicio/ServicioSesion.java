@@ -13,7 +13,7 @@ public class ServicioSesion {
 		ConexionBD con = new ConexionBD();		
 		List<SesionVO> sesion = new ArrayList<SesionVO>(); 		
 		
-		ResultSet rs = con.consultar("select NOMBRES, TELEFONO from USUARIO");
+		ResultSet rs = con.consultar("select NOMBREUSUARIO, CONTRASENIA from USUARIO");
 		
 		try {
 			while(rs.next()){

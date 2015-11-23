@@ -48,7 +48,7 @@
 				<tr>
 					<td>Clave: </td>
 					<td>
-						<input type="text" name="clave">
+						<input type="password" name="clave">
 					</td>
 				</tr>
 				<tr>

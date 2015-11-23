@@ -16,13 +16,13 @@ import ec.edu.epn.modelo.vo.SucursalVO;
  * Servlet implementation class Sucursales
  */
 @WebServlet("/Sucursales")
-public class Sucursales extends HttpServlet {
+public class AdminSucursal extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Sucursales() {
+    public AdminSucursal() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,15 +32,14 @@ public class Sucursales extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		ServicioSucursal m = new ServicioSucursal();
+		List<SucursalVO> s=m.listarSucursales();
 		
-		ServicioSucursal s = new ServicioSucursal();
-		List<String> li =	s.listarSectores();
-		//3.1 PUBLICAR LOS DATOS
-		request.setAttribute("comboSector", li);
-		
+		//3.1 PUBLICAR LOS DATOS		
+		request.setAttribute("sucursal", s);
 		//3.2 INVOCAR A LA VISTA
-				RequestDispatcher rd = getServletContext().getRequestDispatcher("/html/pageAdminSucursales.jsp");		
-				rd.forward(request, response);
+		RequestDispatcher rd = getServletContext().getRequestDispatcher("/html/pageAdminSucursales.jsp");		
+		rd.forward(request, response);
 		
 		
 	}

@@ -34,7 +34,7 @@ public class ActualizacionUsuario extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		ServicioActualizarDatos sa = new ServicioActualizarDatos();
 		List<RegistroVO> ls = new ArrayList<RegistroVO>();
 		

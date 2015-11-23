@@ -13,15 +13,15 @@ public class ServicioListarUsuario {
 		ConexionBD con = new ConexionBD();		
 		List<RegistroVO> usuario = new ArrayList<RegistroVO>(); 		
 		
-		ResultSet rs = con.consultar("select Nombres, telefono, telefonocelular, direccion, referencia from USUARIO");
+		ResultSet rs = con.consultar("select NOMBREUSUARIO, APELLIDOUSUARIO, TELEFONOUSUARIO, CORREOUSUARIO, CONTRASENIA from USUARIO");
 		
 		try {
 			while(rs.next()){
 				RegistroVO i=new RegistroVO();
 				i.setNombreU(rs.getString(1));
 				i.setApellidoU(rs.getString(2));
-				i.setEmailU(rs.getString(3));
-				i.setTelefonoU(rs.getString(4));
+				i.setTelefonoU(rs.getString(3));
+				i.setEmailU(rs.getString(4));
 				i.setClaveU(rs.getString(5));
 				usuario.add(i);
 			}

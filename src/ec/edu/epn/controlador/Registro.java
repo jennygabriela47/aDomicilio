@@ -35,10 +35,10 @@ public class Registro extends HttpServlet {
 		ServicioRegistro sr = new ServicioRegistro ();
 		String nombreU = request.getParameter("nombre");
 		String apellidoU = request.getParameter("apellido");
-		String emailU = request.getParameter("email");
 		String telefonoU = request.getParameter("telefono");
+		String emailU = request.getParameter("email");
 		String claveU = request.getParameter("clave");		
-		sr.registroUsuario(nombreU, apellidoU, emailU, telefonoU, claveU);
+		sr.registroUsuario(nombreU, apellidoU, telefonoU, emailU, claveU);
 				
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/html/pageRegistro.jsp");		
 		rd.forward(request, response);

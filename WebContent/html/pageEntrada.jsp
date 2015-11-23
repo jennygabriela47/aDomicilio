@@ -31,7 +31,7 @@
 								<%= entra.getNombrePlato()%>
 							</td>
 							<td>
-								<%= entra.getPrecio()%>
+								<%= "$ "+entra.getPrecio()%>
 							</td>
 						</tr>
 						<tr>

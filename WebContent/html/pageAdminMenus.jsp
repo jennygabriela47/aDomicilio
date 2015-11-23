@@ -16,22 +16,22 @@
 	<%@include file="header.jsp" %>
 	
 	<center>
-	
-		
-		
-		
-	<form method="get" action="Menus">
-		<%@include file="menuAdmin.jsp" %>
-		
-		<div align="center">
-		<div method="get" action="NuevoPlato">
-		<button type="submit" class="btn btn-primary ">NUEVO PLATO</button>
-		</div>
+	<%@include file="menuAdmin.jsp" %>
 		<div class="container">
-			<div class="row">
-				<div class="col-xs-12 col-sm-8 col-md-9 col-lg-6">
+		<div align="center">
+		<form method="get" action="NuevoPlato">
+		<button type="submit" class="btn btn-primary ">NUEVO PLATO</button>
+		</form>
+		</div>	
+		</div>		
+		</center>
+			<center>
+	<form method="get" action="Menus">
+		
+	
 				<div>
 				<h2>ENTRADAS</h2>
+				
 					<table class="table" >
 				
 						<%
@@ -48,23 +48,28 @@
 							<td>
 								<%= entra.getDescripcionPlato() %>
 							</td>
-							</tr>
-						<tr>
+						
 		
 							<td>
+							
+							<form method="get" action="CambioPlato">
+								<button type="submit" class="btn btn-primary btn-xs" align="left">Seleccionar</button>
+								</form>
+								</td>
+							<td>
+								<button type="submit" class="btn btn-primary btn-xs" align="left">Eliminar</button>
 								
-											<button type="submit" class="btn btn-primary btn-xs" align="left">Editar</button>
-										
-											<button type="submit" class="btn btn-primary btn-xs" align="right">Eliminar</button>
-										
-							
 							</td>
-							
+									
 						</tr>	
-											
-						<%} %>
-						</table>
-						</div>
+			
+					<%} %>	
+				
+								</table>
+								</div>
+					
+					
+		
 						<div>
 				<h2>PLATOS FUERTES</h2>
 						<table class="table" >
@@ -83,16 +88,17 @@
 							<td>
 								<%= entra.getDescripcionPlato() %>
 							</td>
-							</tr>
-						<tr>
+						
 		
 							<td>
-								
-											<button type="submit" class="btn btn-primary btn-xs" align="left">Editar</button>
-										
-											<button type="submit" class="btn btn-primary btn-xs" align="right">Eliminar</button>
-										
 							
+							<form method="get" action="CambioPlato">
+								<button type="submit" class="btn btn-primary btn-xs" align="left">Seleccionar</button>
+								</form>
+								</td>
+							<td>
+								<button type="submit" class="btn btn-primary btn-xs" align="left">Eliminar</button>
+								
 							</td>
 							
 						</tr>	
@@ -118,18 +124,18 @@
 							<td>
 								<%= entra.getDescripcionPlato() %>
 							</td>
-							</tr>
-						<tr>
-		
 							<td>
+							
+							<form method="get" action="CambioPlato">
+								<button type="submit" class="btn btn-primary btn-xs" align="left">Seleccionar</button>
+								</form>
+								</td>
+							<td>
+								<button type="submit" class="btn btn-primary btn-xs" align="left">Eliminar</button>
 								
-											<button type="submit" class="btn btn-primary btn-xs" align="left">Editar</button>
-										
-											<button type="submit" class="btn btn-primary btn-xs" align="right">Eliminar</button>
-										
-							
 							</td>
-							
+					
+		
 						</tr>	
 											
 						<%} %>
@@ -154,16 +160,16 @@
 							<td>
 								<%= entra.getDescripcionPlato() %>
 							</td>
-							</tr>
-						<tr>
-		
-							<td>
-								
-											<button type="submit" class="btn btn-primary btn-xs" align="left">Editar</button>
-										
-											<button type="submit" class="btn btn-primary btn-xs" align="right">Eliminar</button>
-										
+						
+						<td>
 							
+							<form method="get" action="CambioPlato">
+								<button type="submit" class="btn btn-primary btn-xs" align="left">Seleccionar</button>
+								</form>
+								</td>
+							<td>
+								<button type="submit" class="btn btn-primary btn-xs" align="left">Eliminar</button>
+								
 							</td>
 							
 						</tr>	
@@ -172,12 +178,11 @@
 						
 					</table>
 					</div>	
-				</div>
-			</div>			
-		</div>
-	</div>
+					</form>
+	
 	<input type="hidden" name="codPedido" value="<%=codPedido%>"/>
-	</form>
+	
+	</center>
 	<%@include file="footer.jsp" %>
 	<script language="Javascript" type="text/javascript" src="js/jQuery.js"></script>
 	<script language="Javascript" type="text/javascript" src="js/bootstrap.min.js"></script>

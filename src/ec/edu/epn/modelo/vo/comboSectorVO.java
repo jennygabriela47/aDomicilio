@@ -1,11 +1,11 @@
 package ec.edu.epn.modelo.vo;
 
-public class comboSector {
+public class comboSectorVO {
 	
 	private int codigo;
 	private String nombre;
 	
-	public comboSector()
+	public comboSectorVO()
 	{
 		codigo = 0;
 		nombre = "";

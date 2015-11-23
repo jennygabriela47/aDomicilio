@@ -13,7 +13,7 @@
 </head>
 <body>
 	<%@include file="header.jsp" %>
-	<form method="get" action="Sucursales">
+	<form method="get" action="AdminSucursal">
 		<%@include file="menuAdmin.jsp" %>
 		<div align="center">
 		

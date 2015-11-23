@@ -36,7 +36,7 @@
 				<tr>
 					<td>E-mail: </td>
 					<td>
-						<input type="text" name="email">
+						<input type="text" name="email" disabled>
 					</td>
 				</tr>
 				<tr>
@@ -48,7 +48,7 @@
 				<tr>
 					<td>Clave: </td>
 					<td>
-						<input type="text" name="clave">
+						<input type="password" name="clave">
 					</td>
 				</tr>
 				<tr>
