@@ -1,5 +1,9 @@
 <footer>
 	<div class="container">
-		<h5>Cerrar Sesión</h5>
+	<% HttpSession hscs = request.getSession();
+	String idccs = (String) hscs.getAttribute("idusuario");
+	if(idccs != null && !idccs.equals("")){%>
+		<a href="Salir"><h5>Derechos Reservados</h5></a>
+	<%}%>
 	</div>
 </footer>

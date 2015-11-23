@@ -14,7 +14,7 @@
 <body>
 	<%@include file="header.jsp" %>
 	<form method="get" action="AdminSucursal">
-		<%@include file="menuAdmin.jsp" %>
+		<%@include file="menu.jsp" %>
 		<div align="center">
 		
 		<div class="container">

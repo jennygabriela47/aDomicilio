@@ -14,22 +14,22 @@
 <body>
 	<%@include file="header.jsp" %>
 	<form method="get" action="ListaPedidos">
-		<%@include file="menuAdmin.jsp" %>
+		<%@include file="menu.jsp" %>
 		<div align="center">
 		
-		<div class="container">
+		<div class="container" align="center">
 		Sucursal:
 		<input type="text" name="sucursal"/>
 		<button type="submit" class="btn btn-primary btn-xs" >Buscar</button>
 		<br>
 		<br>
-			<div class="row">
-				<div class="col-xs-12 col-sm-8 col-md-9 col-lg-6">
+			<div class="row" align="center">
+				<div class="col-xs-12 col-sm-8 col-md-9 col-lg-6" align="center">
 					<table class="table" >
 						
 							
 						<tr>
-						<th>NOMBRES</th><th>DIRECCION</th><th>LUGAR DE REFERECIA</th><th>TELEFONO</th><th>SUCURSAL</th>
+						<th>NOMBRE</th><th>APELLIDO</th><th>TELEFONO</th><th>TOTAL</th><th>LUGAR DE REFERENCIA</th><th>SUCURSAL</th>
 						</tr>
 						<%
 						
@@ -41,17 +41,20 @@
 								<%= pedido.getNombreP()%>
 							</td>
 							<td>
-								<%= pedido.getDireccionP()%>
+								<%= pedido.getApellidoP()%>
 							</td>
 						
 							<td>
-								<%= pedido.getLugarP() %>
+								<%= pedido.getTelefonoP()%>
 							</td>	
 							<td>
-								<%= pedido.getTelefonoP() %>
+								<%= pedido.getTotalP() %>
 							</td>	
 							<td>
-								<%= pedido.getSucursalP() %>
+								<%= pedido.getLugarReferenciaP() %>
+							</td>
+							<td>
+								<%= pedido.getSucursal()%>
 							</td>	
 						</tr>
 						<%} %>

@@ -29,28 +29,24 @@ public class Pedido extends HttpServlet {
 		// TODO Auto-generated method stub
 								
 		HttpSession hs = request.getSession();
-		String codPedido = request.getParameter("codPedido");
-		hs.setAttribute("codPedido", codPedido);
-		int codPedidoInt = Integer.parseInt(codPedido);
 		
 		ServicioMenu sm = new ServicioMenu();
 		
-		for(int i=1;i<=sm.numPlatos();i++){
-			String param = request.getParameter("cantidad"+i);
-			if(param != null){
-				if(!param.equals("")){					
-					int cantidad = Integer.parseInt(param);
-					
-					sm.setPlatoPedido(codPedidoInt, i, cantidad);
-				}				
-			}
+		int codPedidoInt = Integer.parseInt((String)hs.getAttribute("codPedido"));
+		String codPedido = String.valueOf(codPedidoInt);
+		
+		String cantidad = request.getParameter("cantidad");
+		if (cantidad != null && !cantidad.equals("")){
+			int idPlato = Integer.parseInt(request.getParameter("idPlato"));
+			int cantidadInt = Integer.parseInt(cantidad);
+			sm.setPlatoPedido(codPedidoInt, idPlato, cantidadInt);
 		}
 		
 		for(int i=1;i<=sm.numPlatos();i++){
 			String param = request.getParameter("borrar"+i);
 			if(param != null){
 				if(!param.equals("")){					
-					int cantidad = Integer.parseInt(param);
+					int cantidadInt = Integer.parseInt(param);
 					sm.delPlatoPedido(codPedidoInt, i);
 				}				
 			}

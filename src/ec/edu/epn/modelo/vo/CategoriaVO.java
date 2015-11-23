@@ -4,6 +4,7 @@ public class CategoriaVO {
 
 	private int codigoCategoria;
 	private String nombreCategoria;
+	
 	public CategoriaVO()
 	{
 		codigoCategoria=0;

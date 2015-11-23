@@ -13,7 +13,6 @@
 </head>
 <body>
 	<%@include file="header.jsp" %>
-	<form method="get" action="Pedido">
 		<%@include file="menu.jsp" %>
 		<div align="center">
 		<div class="container">
@@ -38,17 +37,22 @@
 							</td>
 							<td>
 								<table>
+								<form method="get" action="Pedido">
 									<tr>
 										<td>
-											<input type="number" name="cantidad<%= entra.getCodigoPlato()%>"/>
+											<input type="number" name="cantidad"/>
 										</td>
 									</tr>
 									
 									<tr>
 										<td align="right">
+											<input type="hidden" name="idPlato" value="<%=entra.getCodigoPlato()%>"/>
+											<input type="hidden" name="codPedido" value="<%=codPedido%>"/>
 											<button type="submit" class="btn btn-primary btn-xs">Agregar</button>
+											
 										</td>
 									</tr>
+								</form>
 								</table>
 							</td>
 						</tr>						
@@ -59,7 +63,6 @@
 		</div>
 	</div>
 	<input type="hidden" name="codPedido" value="<%=codPedido%>"/>
-	</form>
 	<%@include file="footer.jsp" %>
 	<script language="Javascript" type="text/javascript" src="js/jQuery.js"></script>
 	<script language="Javascript" type="text/javascript" src="js/bootstrap.min.js"></script>

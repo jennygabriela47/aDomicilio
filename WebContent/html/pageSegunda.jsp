@@ -116,7 +116,7 @@
 		</div>
 	</form>
 	<br>
-	<%@include file="footer.jsp" %>
+	<%@include file="footer.jsp"%>
 	<script language="Javascript" type="text/javascript" src="js/jQuery.js"></script>
 	<script language="Javascript" type="text/javascript" src="js/bootstrap.min.js"></script>
 </body>

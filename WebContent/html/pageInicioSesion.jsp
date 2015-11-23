@@ -13,6 +13,23 @@
 
 <body>
 	<%@include file="header.jsp" %>
+	<%@include file="menu.jsp" %>
+	<!--<nav class="navbar navbar-default" role="navigation">
+		<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#colapsar">
+					<span class="sr-only">Inicio/Ocultar - Desplegar</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+		</div>
+		<div class="collapse navbar-collapse" id="colapsar">
+			<ul class="nav navbar-nav">			
+				<li><a href="Registro">Regístrate</a></li>
+				<li><a href="Sesion" >Iniciar Sesión</a></li>				
+			</ul>
+		</div>
+	</nav>-->
 	<form method="get" action="Sesion">
 		<div class="container">
 			<h1>Inicia Sesión</h1>

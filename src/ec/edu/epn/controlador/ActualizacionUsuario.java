@@ -10,8 +10,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import ec.edu.epn.modelo.servicio.ServicioMenu;
+import ec.edu.epn.modelo.vo.DatoClienteVO;
 import ec.edu.epn.modelo.vo.RegistroVO;
 import ec.edu.epn.modelo.servicio.ServicioActualizarDatos;
 
@@ -35,10 +37,19 @@ public class ActualizacionUsuario extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		ServicioActualizarDatos sa = new ServicioActualizarDatos();
-		List<RegistroVO> ls = new ArrayList<RegistroVO>();
+		String telefono = request.getParameter("telefono");
+		String clave = request.getParameter("clave");
+		HttpSession hs = request.getSession();
 		
-		request.setAttribute("registro", ls);
+		System.out.println(clave);
+		
+		if(clave != null  && !clave.equals("")){
+			ServicioActualizarDatos sad = new ServicioActualizarDatos();
+			int idUsuario = Integer.parseInt((String) hs.getAttribute("idusuario"));
+			sad.actualizarUsuario(idUsuario, telefono, clave);	
+			DatoClienteVO dc = sad.getUsuario(idUsuario);
+			hs.setAttribute("usuario", dc);	
+		}
 		
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/html/pageActualizarUsuario.jsp");
 		rd.forward(request, response);

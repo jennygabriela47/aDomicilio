@@ -16,7 +16,7 @@
 	<%@include file="header.jsp" %>
 	
 	<center>
-	<%@include file="menuAdmin.jsp" %>
+	<%@include file="menu.jsp" %>
 		<div class="container">
 		<div align="center">
 		<form method="get" action="NuevoPlato">

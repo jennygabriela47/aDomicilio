@@ -40,16 +40,16 @@ public class NuevoPlato extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		/*
+		
 		ServicioMenu sd = new ServicioMenu();
 		
 		String nombreP = request.getParameter("nombre");
-		String descripcionP = request.getParameter("descripcion");
+		String descripcionP = request.getParameter("descricion");
 		String precioP = request.getParameter("precio");
-		double precioDO = Double.parseDouble(precioP); 
-		sd.setPlato(nombreP, descripcionP, precioDO);
-		*/
-		
+		String idCategoria = request.getParameter("idCategoria");
+
+		sd.setPlato(nombreP, descripcionP, precioP, idCategoria);
+				
 		ServicioCategoria m = new ServicioCategoria();
 		List<CategoriaVO> u=m.llenarCategoria();
 		request.setAttribute("categoria", u);	

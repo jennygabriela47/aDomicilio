@@ -1,3 +1,4 @@
+<%@page import="ec.edu.epn.modelo.vo.DatoClienteVO"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -17,6 +18,8 @@
 <body>
 	<%@include file="header.jsp" %>
 	<form method="get" action="DatoCliente">
+	<%HttpSession hs = request.getSession();
+	DatoClienteVO dc = (DatoClienteVO) hs.getAttribute("usuario"); %>
 		<div class="container">
 			<h1>Información de envío</h1>
 		</div>
@@ -25,31 +28,19 @@
 				<tr>
 					<td>Nombres: </td>
 					<td>
-						<input type="text" name="nombre">
+						<input type="text" name="nombre" value="<%=dc.getNombre() + " " + dc.getApellido()%>" disabled="disabled"/>
 					</td>
 				</tr>
 				<tr>
-					<td>Dirección: </td>
+					<td>Teléfono: </td>
 					<td>
-						<input type="text" name="direccion">
+						<input type="text" name="telefono" value="<%=dc.getTelefono()%>" disabled="disabled"/>
 					</td>
 				</tr>
 				<tr>
 					<td>Lugar de referencia: </td>
 					<td>
 						<input type="text" name="lugarReferencia">
-					</td>
-				</tr>
-				<tr>
-					<td>Teléfono: </td>
-					<td>
-						<input type="text" name="telefono">
-					</td>
-				</tr>
-				<tr>
-					<td>Teléfono celular: </td>
-					<td>
-						<input type="text" name="celular">
 					</td>
 				</tr>
 				<tr>

@@ -14,8 +14,8 @@
 </head>
 <body>
 	<%@include file="header.jsp" %>
-	<br>
-	<nav class="navbar navbar-default" role="navigation">
+	<%@include file="menu.jsp" %>
+	<!--<nav class="navbar navbar-default" role="navigation">
 		<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#colapsar">
 					<span class="sr-only">Inicio/Ocultar - Desplegar</span>
@@ -25,33 +25,27 @@
 				</button>
 		</div>
 		<div class="collapse navbar-collapse" id="colapsar">
-			<ul class="nav navbar-nav">
-			
+			<ul class="nav navbar-nav">	
 				<li><a href="Registro">Regístrate</a></li>
-				<li><a href="Sesion" >Iniciar Sesión</a></li>
-				
-				
-							
-				
+				<li><a href="Sesion" >Iniciar Sesión</a></li>	
 			</ul>
 		</div>
-</nav>
+</nav>-->
 <br>
-	<form method="get" action="Pedido">
+	<form method="get" action="NuevoPedido">
 		<div class="container">
 			<section class="main">
 			<div class="row">
 				<div class="col-xs-12 col-sm-4 col-md-3 col-lg-6" align="center">
 				<h4><i>Tu Sucursal más cercana es?</i> </h4>
 					
-					<select style="width:180px; height:40px;">
-						<option value="Seleccione">Seleccione...</option>
+					<select name="idsucursal" style="width:180px; height:40px;">
+						<!--<option value="Seleccione">Seleccione...</option>-->
 						<%
 						List<comboSectorVO> en = (List<comboSectorVO>)request.getAttribute("sucursal");
 						for(comboSectorVO sucursal:en){												
 						%>
-						<option value="sucursal"><%=sucursal.getNombre()%></option>
-					
+						<option value="<%=sucursal.getCodigo()%>"><%=sucursal.getNombre()%></option>
 						<%}%>			
 					</select>
 					
@@ -63,9 +57,12 @@
 					
 					<h4>Tiempo de entrega: 30 minutos</h4>
 					<h4>Modo de pago: Efectivo</h4>
-					
-					<input type="hidden"/ name="codPedido" value="1">
-					<button type="submit" class="btn btn-primary" >Ingresar</button>
+					<%HttpSession hsmIni = request.getSession(); 
+					hsmIni = request.getSession();
+						String idusr = (String) hsmIni.getAttribute("idusuario");
+						if(idusr != null && !idusr.equals("")){%>
+						<button type="submit" class="btn btn-primary">Ingresar</button>
+					<%}%>					
 				</div>
 			</div>		
 			</section>

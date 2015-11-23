@@ -14,7 +14,7 @@
 </head>
 <body>
 	<%@include file="header.jsp" %>
-	<form method="get" action="Plato">
+	<form method="get" action="NuevoPlato">
 	
 		<div class="container">
 			<h1>Ingreso de Nuevo Plato</h1>
@@ -42,12 +42,12 @@
 				<tr>
 					<td>Categoria: </td>
 					<td>
-					<select style="width:180px; height:40px;">
+					<select name='idCategoria' style="width:180px; height:40px;">
 						<% 
 						List<CategoriaVO> en = (List<CategoriaVO>)request.getAttribute("categoria");
 						for(CategoriaVO entra:en){												
 						%>
-						<option value="categoria"><%=entra.getNombreCategoria()%></option>
+						<option value="<%=entra.getCodigoCategoria()%>"><%=entra.getNombreCategoria()%></option>
 					
 						<%}%>
 										

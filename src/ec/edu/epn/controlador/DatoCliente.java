@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import ec.edu.epn.modelo.servicio.ServicioDatos;
 import ec.edu.epn.modelo.servicio.ServicioMenu;
@@ -28,14 +29,13 @@ public class DatoCliente extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		ServicioDatos sd = new ServicioDatos();
-		String nombres = request.getParameter("nombre");
-		String telefono = request.getParameter("telefono");
-		String telefonoCelular = request.getParameter("telefonoCelular");
-		String direccion = request.getParameter("direccion");
-		String referencia = request.getParameter("referencia");		
-		sd.setCliente(nombres, telefono, telefonoCelular, direccion, referencia);
+		String lugarReferencia = request.getParameter("lugarReferencia");
+		HttpSession hs = request.getSession();
+		int codPedidoInt = Integer.parseInt((String)hs.getAttribute("codPedido"));
+		
+		sd.updatePedido(codPedidoInt, lugarReferencia);
 				
-		RequestDispatcher rd = getServletContext().getRequestDispatcher("/html/pageDatos.jsp");		
+		RequestDispatcher rd = getServletContext().getRequestDispatcher("/Inicio");		
 		rd.forward(request, response);
 	}
 

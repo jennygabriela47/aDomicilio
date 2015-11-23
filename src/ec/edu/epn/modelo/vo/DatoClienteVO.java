@@ -2,19 +2,28 @@ package ec.edu.epn.modelo.vo;
 
 public class DatoClienteVO {
 
+	private int codigo;
 	private String nombre;
+	private String apellido;
 	private String telefono;
-	private String telefonoCelular;
-	private String direccion;
-	private String referencia;
+	private String correo;
+	private String contrasenia;
 	
-	public DatoClienteVO()
-	{
+	public DatoClienteVO()	{
+		codigo=0;
 		nombre="";
+		apellido="";
 		telefono="";
-		telefonoCelular="";
-		direccion="";
-		referencia="";
+		correo="";
+		contrasenia="";
+	}
+
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
 	}
 
 	public String getNombre() {
@@ -25,6 +34,14 @@ public class DatoClienteVO {
 		this.nombre = nombre;
 	}
 
+	public String getApellido() {
+		return apellido;
+	}
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
 	public String getTelefono() {
 		return telefono;
 	}
@@ -33,28 +50,19 @@ public class DatoClienteVO {
 		this.telefono = telefono;
 	}
 
-	public String getTelefonoCelular() {
-		return telefonoCelular;
+	public String getCorreo() {
+		return correo;
 	}
 
-	public void setTelefonoCelular(String telefonoCelular) {
-		this.telefonoCelular = telefonoCelular;
+	public void setCorreo(String correo) {
+		this.correo = correo;
 	}
 
-	public String getDireccion() {
-		return direccion;
+	public String getContrasenia() {
+		return contrasenia;
 	}
 
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
-	}
-
-	public String getReferencia() {
-		return referencia;
-	}
-
-	public void setReferencia(String referencia) {
-		this.referencia = referencia;
-	}
-	
+	public void setContrasenia(String contrasenia) {
+		this.contrasenia = contrasenia;
+	}	
 }

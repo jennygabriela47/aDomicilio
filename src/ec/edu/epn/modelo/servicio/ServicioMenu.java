@@ -155,14 +155,43 @@ public class ServicioMenu {
 		con.insertar("INSERT INTO ORDEN (CODIGOORDEN) VALUES ("+codOrden+")");		
 	}
 	
+	public int setOrden (int codUsr, int codSuc){
+		ConexionBD con = new ConexionBD();	
+		int codOrden = this.lastIdOrden()+1;
+		con.insertar("INSERT INTO ORDEN (CODIGOORDEN,CODIGOUSUARIO,CODIGOSUCURSAL) VALUES ('"+codOrden+"','"+codUsr+"','"+codSuc+"')");
+		return codOrden;
+	}
+	
 	public void updateOrden (int codOrden,double subtotal,double total){
 		ConexionBD con = new ConexionBD();		
 		con.insertar("UPDATE ORDEN SET SUBTOTAL='"+subtotal+"', TOTAL='"+total+"' WHERE CODIGOORDEN='"+codOrden+"'");		
 	}
-	public void setPlato (String nombrePlato, String descripcionPlato, double precioPlato){
+	public void setPlato (String nombrePlato, String descripcionPlato, String precio, String idCategoria){
 		ConexionBD con = new ConexionBD();		
-		con.insertar("INSERT INTO PLATO (NOMBREPLATO, DESCRIPCIONPLATO, PRECIO) VALUES ('"+nombrePlato+"','"+descripcionPlato+"','"+precioPlato+"')");		
+		int id = this.lastIdPlato()+1;
+		con.insertar("INSERT INTO PLATO (CODIGOPLATO, NOMBREPLATO, DESCRIPCIONPLATO, PRECIO, CODIGOCATEGORIA) VALUES ('"+id+"','"+nombrePlato+"','"+descripcionPlato+"','"+precio+"','"+idCategoria+"')");		
+	}
 	
+	public int lastIdPlato(){
+		ConexionBD con = new ConexionBD();
+		
+		ResultSet rs = con.consultar("select MAX(CODIGOPLATO) maxId from PLATO");
+		
+		int numero=0;
+		
+		try 
+		{
+			while(rs.next())
+			{
+				numero = rs.getInt("maxId");
+			}			
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		
+		return numero;
 	}
 	
 	public int numPlatos(){
@@ -177,6 +206,28 @@ public class ServicioMenu {
 			while(rs.next())
 			{
 				numero = rs.getInt("NUMERO");
+			}			
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		
+		return numero;
+	}
+	
+	public int lastIdOrden(){
+		ConexionBD con = new ConexionBD();
+		
+		ResultSet rs = con.consultar("select MAX(CODIGOORDEN) maxId from ORDEN");
+		
+		int numero=0;
+		
+		try 
+		{
+			while(rs.next())
+			{
+				numero = rs.getInt("maxId");
 			}			
 		} 
 		catch (SQLException e) 

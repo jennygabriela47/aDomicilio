@@ -1,6 +1,7 @@
 package ec.edu.epn.controlador;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -32,8 +33,17 @@ public class ListaPedidos extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String sucursal = request.getParameter("sucursal");
 		ServicioListarPedidos m = new ServicioListarPedidos();
-		List<PedidosVO> u=m.listarPedidos();
+		List<PedidosVO> u= new ArrayList<PedidosVO>();
+		
+		if(sucursal != null && !sucursal.equals("")){
+			u=m.listarPedidosBuscar(sucursal);
+		}
+		else{
+			u=m.listarPedidos();
+		}		
 		
 		//3.1 PUBLICAR LOS DATOS		
 		request.setAttribute("pedidos", u);

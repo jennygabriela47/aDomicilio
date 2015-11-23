@@ -14,7 +14,7 @@
 <body>
 	<%@include file="header.jsp" %>
 	<form method="get" action="Usuarios">
-		<%@include file="menuAdmin.jsp" %>
+		<%@include file="menu.jsp" %>
 		<div align="center">
 		<h2>USUARIOS REGISTRADOS</h2>
 		<div class="container">

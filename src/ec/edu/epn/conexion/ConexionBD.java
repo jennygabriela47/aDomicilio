@@ -41,7 +41,7 @@ public class ConexionBD  {
 		ResultSet resultado;
 		try 
 		{
-			System.out.println(sql);
+			//System.out.println(sql);
 			Statement sentencia = conexion.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
 			resultado = sentencia.executeQuery(sql);
 		} 
