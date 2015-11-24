@@ -38,9 +38,7 @@
 							<td>
 								<%= sucursal.getDireccionS()%>
 							</td>
-							<td>
-							<button type="submit" class="btn btn-primary btn-xs" align="right">Eliminar</button>
-						</td>
+							
 						</tr>
 						<%} %>
 							</table>

@@ -50,16 +50,7 @@
 							</td>
 						
 		
-							<td>
 							
-							<form method="get" action="CambioPlato">
-								<button type="submit" class="btn btn-primary btn-xs" align="left">Seleccionar</button>
-								</form>
-								</td>
-							<td>
-								<button type="submit" class="btn btn-primary btn-xs" align="left">Eliminar</button>
-								
-							</td>
 									
 						</tr>	
 			
@@ -90,16 +81,6 @@
 							</td>
 						
 		
-							<td>
-							
-							<form method="get" action="CambioPlato">
-								<button type="submit" class="btn btn-primary btn-xs" align="left">Seleccionar</button>
-								</form>
-								</td>
-							<td>
-								<button type="submit" class="btn btn-primary btn-xs" align="left">Eliminar</button>
-								
-							</td>
 							
 						</tr>	
 											
@@ -124,17 +105,7 @@
 							<td>
 								<%= entra.getDescripcionPlato() %>
 							</td>
-							<td>
 							
-							<form method="get" action="CambioPlato">
-								<button type="submit" class="btn btn-primary btn-xs" align="left">Seleccionar</button>
-								</form>
-								</td>
-							<td>
-								<button type="submit" class="btn btn-primary btn-xs" align="left">Eliminar</button>
-								
-							</td>
-					
 		
 						</tr>	
 											
@@ -161,16 +132,6 @@
 								<%= entra.getDescripcionPlato() %>
 							</td>
 						
-						<td>
-							
-							<form method="get" action="CambioPlato">
-								<button type="submit" class="btn btn-primary btn-xs" align="left">Seleccionar</button>
-								</form>
-								</td>
-							<td>
-								<button type="submit" class="btn btn-primary btn-xs" align="left">Eliminar</button>
-								
-							</td>
 							
 						</tr>	
 											

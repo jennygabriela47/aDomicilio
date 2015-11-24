@@ -15,7 +15,7 @@
 <body>
 	<%@include file="header.jsp" %>
 	<form method="get" action="NuevoPlato">
-	
+	<%@include file="menu.jsp" %>
 		<div class="container">
 			<h1>Ingreso de Nuevo Plato</h1>
 		</div>

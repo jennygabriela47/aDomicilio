@@ -41,8 +41,6 @@ public class ActualizacionUsuario extends HttpServlet {
 		String clave = request.getParameter("clave");
 		HttpSession hs = request.getSession();
 		
-		System.out.println(clave);
-		
 		if(clave != null  && !clave.equals("")){
 			ServicioActualizarDatos sad = new ServicioActualizarDatos();
 			int idUsuario = Integer.parseInt((String) hs.getAttribute("idusuario"));

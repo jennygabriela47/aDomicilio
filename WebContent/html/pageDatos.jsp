@@ -10,11 +10,7 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 	<link rel="stylesheet" href="css/estilos.css" type="text/css">
 </head>
-<script type="text/javascript">
-	function mensajeFinalizado(){
-		alert("Su orden se esta cocinando :D")			
-	}	
-</script>
+
 <body>
 	<%@include file="header.jsp" %>
 	<form method="get" action="DatoCliente">
